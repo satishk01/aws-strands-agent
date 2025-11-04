@@ -1,0 +1,7 @@
+uv venv --python 3.12
+source .venv/bin/activate
+
+# Install Strands Agents
+uv pip install strands-agents strands-agents-tools mcp
+
+python3 ./app.py

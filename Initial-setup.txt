@@ -13,4 +13,6 @@ uv venv --python 3.12
 source .venv/bin/activate
 
 # Install Strands Agents
-uv pip install strands-agents strands-agents-tools
+uv pip install strands-agents strands-agents-tools mcp
+
+aws configure and set the region as we are using role based access for the rest.
