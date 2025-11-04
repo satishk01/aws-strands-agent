@@ -1,0 +1,20 @@
+uv venv --python 3.12
+source .venv/bin/activate
+
+# Install Strands Agents
+uv pip install strands-agents strands-agents-tools mcp pandas matplotlib
+
+python3 ./main.py
+
+
+## How it Works
+
+Agents-As-Tools/
++-- __init__.py          # Package initialization
++-- main.py              # Entry point with CLI interface
++-- orchestrator.py      # Main orchestrator class
++-- config.py           # Configuration and model settings
++-- tools.py            # Custom tool implementations
++-- utils.py            # Utility functions
++-- requirements.txt    # Python dependencies
++-- README.md          # This documentation
