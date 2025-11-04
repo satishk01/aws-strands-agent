@@ -1,0 +1,16 @@
+uv venv --python 3.12
+source .venv/bin/activate
+
+# Install Strands Agents
+uv pip install strands-agents strands-agents-tools mcp pandas matplotlib
+
+python3 ./main.py
+
+
+## How it Works
+
+1. **Retriever** gets mock stock price
+2. **Conditional routing** based on price:
+   - Price < $750 ? Buy agent  
+   - Price > $750 ? Sell agent
+3. **Agent** makes buy/sell recommendation
