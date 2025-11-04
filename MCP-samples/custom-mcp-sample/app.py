@@ -38,7 +38,7 @@ with stdio_mcp_client, local_mcp_client:
     agent = Agent(tools=tools)
     print("-------------------")
     print("Request one:")
-    agent("What is AWS Lambda?")
+    agent("What is AWS Bedrock?")
     print("-------------------")
     print("Request two:")
     agent("Give me details for Sylvester")

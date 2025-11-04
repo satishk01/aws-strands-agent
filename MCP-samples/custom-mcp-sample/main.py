@@ -23,7 +23,7 @@ people_db: dict[str, FetchData] = {
     "Tweety": FetchData(age=55, phone_no="9911939397", realtion="Bird",   activity=["Swinging", "Running"])
 }
 
-# return biodata tool using pydantic model and people list (mock database)
+# return Fetchdata tool using pydantic model and people list (mock database)
 @mcp.tool()
 def return_FetchData(name: str) -> FetchData:
     """Return details for a known person name."""
