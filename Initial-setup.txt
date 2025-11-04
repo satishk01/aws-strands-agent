@@ -1,0 +1,16 @@
+
+
+### install git
+sudo yum install git -y
+
+
+### install uv and uvx
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+### set the virtual environment 
+
+uv venv --python 3.12
+source .venv/bin/activate
+
+# Install Strands Agents
+uv pip install strands-agents strands-agents-tools
