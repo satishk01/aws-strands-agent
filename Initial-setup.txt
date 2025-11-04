@@ -13,6 +13,6 @@ uv venv --python 3.12
 source .venv/bin/activate
 
 # Install Strands Agents
-uv pip install strands-agents strands-agents-tools mcp
+uv pip install strands-agents strands-agents-tools mcp pandas matplotlib
 
 aws configure and set the region as we are using role based access for the rest.
