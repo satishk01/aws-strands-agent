@@ -1,0 +1,54 @@
+sudo yum install git -y
+
+# Update system packages
+sudo yum update -y
+
+# Install Docker
+sudo yum install docker -y
+
+# Start Docker service
+sudo systemctl start docker
+
+# Enable Docker to start on boot
+sudo systemctl enable docker
+
+# Add current user to docker group (optional but recommended)
+sudo usermod -a -G docker ec2-user
+
+# Install Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# Make Docker Compose executable
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Verify installations
+docker --version
+docker-compose --version
+
+# Verify Docker service is running
+sudo systemctl status docker
+
+######Log off and then relogin back
+
+### install uv and uvx
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+### set the virtual environment 
+
+uv venv --python 3.12
+source .venv/bin/activate
+
+# Install Strands Agents
+
+uv pip install strands-agents strands-agents-tools mcp pandas matplotlib 
+uv pip install 'strands-agents[otel]' langfuse python-dotenv 'strands-agents[ollama]'
+
+
+git clone https://github.com/langfuse/langfuse.git
+cd langfuse
+docker-compose up -d
+
+to acces Langfuse use http://<<ec2-public-ip>>:3000
+
+login, create a organization, project and get the api keys which you need to use in the application
+
